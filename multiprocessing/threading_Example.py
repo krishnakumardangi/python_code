@@ -13,17 +13,18 @@ def function_two():
     print("Function Two is running after 3 second.")
     pass
 
-# Create two threads for each function
-thread_one = threading.Thread(target=function_one)
-thread_two = threading.Thread(target=function_two)
+if __name__ == "__main__":  # confirms that the code is under main function
+    # Create two threads for each function
+    thread_one = threading.Thread(target=function_one)
+    thread_two = threading.Thread(target=function_two)
 
-# Start both threads
-print("I am calling one fuction then calling other without waiting to complete first one")
-thread_one.start()
-print("Somethig in between")
-thread_two.start()
-print("Calling funvtioin is complete")
+    # Start both threads
+    print("I am calling one fuction then calling other without waiting to complete first one")
+    thread_one.start()
+    print("Somethig in between")
+    thread_two.start()
+    print("Calling funvtioin is complete")
 
-# Wait for both threads to finish (this won't happen in this example)
-# thread_one.join()
+    # Wait for both threads to finish (this won't happen in this example)
+    # thread_one.join()
 # thread_two.join()
