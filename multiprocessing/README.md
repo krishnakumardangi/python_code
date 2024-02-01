@@ -15,13 +15,13 @@ pool = ThreadPool(processes=10)
 ## Life-Cycle of the ThreadPool ##
 There are four main steps in the life-cycle of using the ThreadPool class, they are: create, submit, wait, and shutdown.
 
-Step 1. Create: Create the thread pool by calling the constructor ThreadPool().
-Step 2. Submit: Submit tasks synchronously or asynchronously.
-Step 3. Wait: Wait and get results as tasks complete (optional).
-        3a. Wait on AsyncResult objects to Complete
-        3b. Wait on AsyncResult objects for Result
-Step 4. Shutdown: Shut down the thread pool by calling shutdown().
-        4a. Shutdown Automatically with the Context Manager
+<br>Step 1. Create: Create the thread pool by calling the constructor ThreadPool().
+<br>Step 2. Submit: Submit tasks synchronously or asynchronously.
+<br>Step 3. Wait: Wait and get results as tasks complete (optional).
+        <br>3a. Wait on AsyncResult objects to Complete
+        <br>3b. Wait on AsyncResult objects for Result
+<br>Step 4. Shutdown: Shut down the thread pool by calling shutdown().
+        <br>4a. Shutdown Automatically with the Context Manager
 
 The following figure helps to picture the life-cycle of the ThreadPool class.
 
@@ -36,7 +36,7 @@ pool = multiprocessing.pool.ThreadPool(processes=4)
 ```
 
 2. SUBMIT: pool.apply(task), pool.map(task, items), pool.starmap(task, items)
-2a. Issue Tasks Synchronously
+<br>2a. Issue Tasks Synchronously
 ```
 # issue a task to the thread pool
 pool.apply(task)
@@ -51,7 +51,7 @@ for result in map(task, items):
 for result in starmap(task, items):
 	# ...
 ```
-2b. Issue Tasks Asynchronously
+<br>2b. Issue Tasks Asynchronously
 Issuing tasks asynchronously to the thread pool means that the caller will not block, allowing the caller to continue on with other work while the tasks are executing.
 ```
 # issue tasks to the thread pool asynchronously
@@ -59,9 +59,8 @@ result = map_async(task, items)
 ```
 The imap() function takes the name of a target function and an iterable like the map() function.
 The difference is that the imap() function is lazier in two ways:
-
-    imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
-    imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
+	imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
+	imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
 For example:
 ```
 # iterates results as tasks are completed in order
@@ -69,7 +68,7 @@ for result in imap(task, items):
 	# ...
 ```
 3. WAIT: pool.wait(), pool.get()
-3a. Wait on AsyncResult objects to Complete
+<br>3a. Wait on AsyncResult objects to Complete
 ```
 # wait for issued task to complete with a timeout
 result.wait(timeout=10)
@@ -81,8 +80,8 @@ else :
 	print('Not Done Yet')
 	...
 ```
-3b. Wait on AsyncResult objects for Result
-A “timeout” argument can be specified. If the tasks are still running and do not completed within the specified number of seconds, a multiprocessing.TimeoutError is raised.
+<br>3b. Wait on AsyncResult objects for Result
+<br>A “timeout” argument can be specified. If the tasks are still running and do not completed within the specified number of seconds, a multiprocessing.TimeoutError is raised.
 ```
 # get the result of the task or tasks
 value = result.get()
