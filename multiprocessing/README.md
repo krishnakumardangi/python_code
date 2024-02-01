@@ -59,9 +59,9 @@ result = map_async(task, items)
 ```
 The imap() function takes the name of a target function and an iterable like the map() function.
 <br>The difference is that the imap() function is lazier in two ways:
-<br>imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
-<br>imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
-For example:
+* imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
+* imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
+<br>For example:
 ```
 # iterates results as tasks are completed in order
 for result in imap(task, items):
@@ -89,21 +89,21 @@ value = result.get()
 
 4. SHUTDOWN: pool.close(), pool.terminate()
 <br>The close() function will return immediately and the pool will not take any further tasks.
-For example:
+<br>For example:
 ```
 # close the thread pool
 pool.close()
 ```
 Alternatively, we may want to forcefully terminate all worker threads, regardless of whether they are executing tasks or not.
-This can be achieved via the terminate() function.
-For example:
+<br>This can be achieved via the terminate() function.
+<br>For example:
 ```
 # forcefully close all worker threads
 pool.terminate()
 ```
 We may want to then wait for all tasks in the pool to finish.
-This can be achieved by calling the join() function on the pool.
-For example:
+<br>This can be achieved by calling the join() function on the pool.
+<br>For example:
 ```
 # wait for all issued tasks to complete
 pool.join()
