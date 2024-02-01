@@ -23,7 +23,7 @@ if __name__ == "__main__":  # confirms that the code is under main function
     thread_one.start()
     print("Somethig in between")
     thread_two.start()
-    print("Calling funvtioin is complete")
+    print("Calling function is complete")
 
     # Wait for both threads to finish (this won't happen in this example)
     # thread_one.join()
