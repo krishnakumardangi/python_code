@@ -36,7 +36,7 @@ pool = multiprocessing.pool.ThreadPool(processes=4)
 ```
 
 2. SUBMIT: pool.apply(task), pool.map(task, items), pool.starmap(task, items)
-<br>2a. Issue Tasks Synchronously
+<br>  2a. Issue Tasks Synchronously
 ```
 # issue a task to the thread pool
 pool.apply(task)
@@ -51,16 +51,16 @@ for result in map(task, items):
 for result in starmap(task, items):
 	# ...
 ```
-<br>2b. Issue Tasks Asynchronously
+<br>  2b. Issue Tasks Asynchronously
 Issuing tasks asynchronously to the thread pool means that the caller will not block, allowing the caller to continue on with other work while the tasks are executing.
 ```
 # issue tasks to the thread pool asynchronously
 result = map_async(task, items)
 ```
 The imap() function takes the name of a target function and an iterable like the map() function.
-The difference is that the imap() function is lazier in two ways:
-	imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
-	imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
+<br>The difference is that the imap() function is lazier in two ways:
+<br>imap() issues multiple tasks to the thread pool one by one, instead of all at once like map().
+<br>imap() returns an iterable that yields results one-by-one as tasks are completed, rather than one-by-one after all tasks have been completed like map().
 For example:
 ```
 # iterates results as tasks are completed in order
@@ -88,7 +88,7 @@ value = result.get()
 ```
 
 4. SHUTDOWN: pool.close(), pool.terminate()
-The close() function will return immediately and the pool will not take any further tasks.
+<br>The close() function will return immediately and the pool will not take any further tasks.
 For example:
 ```
 # close the thread pool
