@@ -37,6 +37,6 @@ python -m pip install -U matplotlib
 
 ## Output
 <p>
-<img src="./CPU_Temperature_Vs_Time_Graph.png">Figure 1(a)</img><br>
-<img src="./CPU_Temperature_Vs_Time_Graph1.png">Figure 1(b)</img>
+<img src="./CPU_Temperature_Vs_Time_Graph.png" alt="Temperature Vs Time" width="300" height="200">Figure 1(a)</img><br>
+<img src="./CPU_Temperature_Vs_Time_Graph1.png" alt="Example of Temperature Vs Time" width="300" height="200">Figure 1(b)</img>
 </p>
