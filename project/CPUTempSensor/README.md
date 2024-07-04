@@ -33,3 +33,8 @@ pip install psutil
 python -m pip install -U pip
 python -m pip install -U matplotlib
 ```
+
+
+## Output
+<img src="CPU_Temperature_Vs_Time_Graph.png">
+<img src="CPU_Temperature_Vs_Time_Graph1.png">
